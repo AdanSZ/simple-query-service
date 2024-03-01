@@ -24,11 +24,11 @@ export const FetchAsync = <T extends unknown>({query}: IQuery<T>) => {
     return {executeAsync, isLoading, error}
   }
   
-  export const FetchNow = <T extends unknown>({}, query: ()=>T) => {
+  export const FetchNow = <T extends unknown>({query}:{query: ()=>T}) => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
     const [data, setData] = useState<Awaited<T>|null>(null)
-
+    console.log('query', query)
     useEffect(() => {
       const execute = async () => {
         setIsLoading(true)
