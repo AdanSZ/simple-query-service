@@ -1,28 +1,14 @@
-/**
- * FetchAsync
- *
- * ```ts
- *
- * const FetchAsync()
- * ```
- */
-export declare const FetchAsync: <T extends unknown>({ query }: {
-    query: (params?: {}) => T;
-}) => {
-    executeAsync: (params: {}) => Promise<T>;
-    isLoading: boolean;
-    error: string;
-};
-/**
-* FetchNow
-*
-* ```ts
-*
-* const FetchNow()
-* ```
-*/
-export declare const FetchNow: <T extends unknown>({}: {}, query: () => T) => {
-    data: Awaited<T>;
-    isLoading: boolean;
-    error: string;
-};
+declare module 'simple-query-service'
+
+export function FetchAsync<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
+    executeAsync: (params: T) => Awaited<Y>, 
+    isLoading: boolean, 
+    error: string
+}
+
+export function FetchNow<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
+    data: Awaited<T>,
+    isLoading: boolean,
+    error: string
+}
+

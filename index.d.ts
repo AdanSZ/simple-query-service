@@ -1,3 +1,4 @@
+declare module 'simple-query-service'
 
 export function FetchAsync<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
     executeAsync: (params: T) => Awaited<Y>, 
@@ -10,3 +11,4 @@ export function FetchNow<T extends unknown, Y extends unknown>({query}: {query: 
     isLoading: boolean,
     error: string
 }
+

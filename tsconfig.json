@@ -1,11 +1,15 @@
 {
     "target": "es6",
     "importHelpers": true,
+    "typeRoots": [
+        "./index.d.ts",
+    ],
     "compilerOptions": {
         // ...rest of compiler options
         "baseUrl": ".",
         "paths": {
             "tslib" : ["./node_modules/tslib/tslib.d.ts"]
-        }
+        },
+        "outDir": "dist",
     },
   }

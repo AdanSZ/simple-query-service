@@ -1,9 +1,10 @@
 {
   "name": "simple-query-service",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "simple query service",
   "main": "index.js",
   "types": "index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "npx rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +13,6 @@
     "type": "git",
     "url": "https://github.com/AdanSZ/simple-query-service"
   },
-  "type": "module",
   "author": "Adan Sandez Zavala",
   "license": "ISC",
   "devDependencies": {
