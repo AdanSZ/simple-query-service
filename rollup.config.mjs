@@ -3,6 +3,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import terser from '@rollup/plugin-terser';
 import typescript from "rollup-plugin-typescript2"; // For Typescript
+import dts from 'rollup-plugin-dts';
+import del from "rollup-plugin-delete";
 
 export default [
   {
@@ -31,5 +33,17 @@ export default [
       typescript({ useTsconfigDeclarationDir: true }),
     ],
     external: ["react", "react-dom"],
-  }
+  },
+  {
+      input: './src/index.d.ts',
+      output: [
+        { 
+          file: 'dist/index.d.ts',
+          format: 'ts' 
+        },
+      ],
+      plugins: [
+        dts(),
+      ],
+  },
 ];

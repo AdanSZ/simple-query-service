@@ -1,12 +1,4 @@
 import { useEffect, useState } from "react"
-/**
- * FetchAsync
- *
- * ```ts
- * 
- * const FetchAsync()
- * ```
- */
 interface IQuery<T>{
     query: (params?: {}) => Promise<T>
 }
@@ -25,21 +17,13 @@ export const FetchAsync = <T extends unknown>({query}: IQuery<T>) => {
       } catch (error){
         console.log(error)
         setError(error as string)
+        return error
       }
       setIsLoading(false)
     }
     
     return {executeAsync, isLoading, error}
   }
-
-  /**
- * FetchNow
- *
- * ```ts
- * 
- * const FetchNow()
- * ```
- */
   
   export const FetchNow = <T extends unknown>({}, query: ()=>T) => {
     const [isLoading, setIsLoading] = useState(false)
