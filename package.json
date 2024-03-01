@@ -1,0 +1,30 @@
+{
+  "name": "simplequeryservice",
+  "version": "0.0.1",
+  "description": "simple query service",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adan Sandez Zavala",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/react": "^18.0.34",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.24.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.12.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
+  }
+}
