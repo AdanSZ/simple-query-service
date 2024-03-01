@@ -1,5 +1,5 @@
 declare function FetchAsync<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
-    executeAsync: (params: T) => Awaited<Y>, 
+    executeAsync: (params: T) => Promise<Y>, 
     isLoading: boolean, 
     error: string
 }
