@@ -1,11 +1,11 @@
 
-export function FetchAsync<T extends unknown>({query}: {query: (params?: {}) => T}): {
-    executeAsync: Awaited<T>, 
+export function FetchAsync<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
+    executeAsync: (params: T) => Awaited<Y>, 
     isLoading: boolean, 
     error: string
 }
 
-export function FetchNow<T extends unknown>({}, query: ()=>T): {
+export function FetchNow<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
     data: Awaited<T>,
     isLoading: boolean,
     error: string

@@ -7,7 +7,11 @@ import { useEffect, useState } from "react"
  * const FetchAsync()
  * ```
  */
-export const FetchAsync = <T extends unknown>({query}: {query: (params?: {}) => T}) => {
+interface IQuery<T>{
+    query: (params?: {}) => Promise<T>
+}
+
+export const FetchAsync = <T extends unknown>({query}: IQuery<T>) => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState('')
   
