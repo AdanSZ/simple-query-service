@@ -5,7 +5,7 @@ declare function FetchAsync<T extends unknown, Y extends unknown>({query}: {quer
 }
 
 declare function FetchNow<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
-    data: Awaited<T>,
+    data: Awaited<Y>,
     isLoading: boolean,
     error: string
 }
