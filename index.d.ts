@@ -12,4 +12,3 @@ declare function FetchNow<T extends unknown, Y extends unknown>({query}: {query:
 
 
 export {FetchAsync, FetchNow}
-
