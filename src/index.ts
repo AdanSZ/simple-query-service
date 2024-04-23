@@ -10,7 +10,6 @@ export const FetchAsync = <T>({ query }: IQuery<T>): FetchAsyncType<T> => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const executeAsync = async (params: Record<string, unknown>) => {
     setIsLoading(true)
     setError('')

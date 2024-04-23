@@ -1,14 +1,15 @@
-declare function FetchAsync<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
-    executeAsync: (params: T) => Awaited<Y>, 
+declare function FetchAsync<T>({query}: {query: (params: T) => Promise<T>}): {
+    executeAsync: (params: Record<string, unknown>) => Promise<T>, 
     isLoading: boolean, 
     error: string
 }
 
-declare function FetchNow<T extends unknown, Y extends unknown>({query}: {query: (params: T) => Promise<Y>}): {
-    data: Awaited<T>,
+declare function FetchNow<T>({query}: {query: (params: T) => Promise<T>}): {
+    data: Awaited<T> | null,
     isLoading: boolean,
     error: string
 }
 
 
 export {FetchAsync, FetchNow}
+
