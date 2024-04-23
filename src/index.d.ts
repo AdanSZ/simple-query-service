@@ -4,7 +4,7 @@ declare function FetchAsync<T>({query}: {query: (params: Record<string, unknown>
     error: string
 }
 
-declare function FetchNow<T>({query}: {query: (params: T) => Promise<T>}): {
+declare function FetchNow<T>({query}: {query: Promise<T>}): {
     data: Awaited<T> | null,
     isLoading: boolean,
     error: string
